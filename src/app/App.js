@@ -16,6 +16,7 @@ import Quizzes from "../features/quizzes/Quizzes";
 import ROUTES from "./routes";
 
 export default function App() {
+
   return (
     <Router>
 

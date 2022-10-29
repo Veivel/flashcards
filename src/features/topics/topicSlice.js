@@ -19,6 +19,24 @@ const topicSlice = createSlice({
                 payload: {id: id, name: topicName, icon: topicIcon, quizIds: quizIdsArray}
             })
         },
+
+        // delete quiz from topic's quizIds array
+        deleteQuizFromTopic: {
+            reducer: (state, action) => {
+                const oldTopic = state.topics[action.payload.topicId];
+                const editedTopic = {
+                    ...oldTopic, 
+                    quizIds: oldTopic.quizIds.filter(
+                        (id) => (id !== action.payload.quizId)
+                        )
+                    }
+                state.topics = {...state.topics, [action.payload.topicId]: editedTopic}
+            },
+            prepare: (topicId, quizId) => ({
+                payload: {topicId: topicId, quizId: quizId}
+            })
+        }
+
     }
 });
 
@@ -27,5 +45,5 @@ export const selectTopics = state => {
     return state.topics.topics;
 }
 
-export const { addQuizToTopic, addTopic } = topicSlice.actions;
+export const { addTopic, deleteQuizFromTopic } = topicSlice.actions;
 export default topicSlice.reducer;

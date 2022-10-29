@@ -6,8 +6,10 @@ https://stackoverflow.com/questions/36580963/can-you-or-should-you-use-localstor
 */
 
 const loadItem = (itemName) => {
+    // uncomment this line if you need to flush all data
+    // localStorage.clear();
+
     const local = JSON.parse(localStorage.getItem(itemName));
     return local ? local : {};
 }
-
 export default loadItem;

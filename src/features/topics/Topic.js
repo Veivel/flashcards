@@ -20,7 +20,9 @@ export default function Topic() {
       <ul className="quizzes-list">
         {quizzesForTopic.map((quiz) => (
           <li className="quiz" key={quiz.id}>
-            <Link to={ROUTES.quizRoute(quiz.id)}>{quiz.name}</Link>
+            <Link to={ROUTES.quizRoute(quiz.id)}>
+              {quiz.name}
+            </Link>
           </li>
         ))}
       </ul>

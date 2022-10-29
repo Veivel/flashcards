@@ -12,7 +12,9 @@ export default function Quizzes() {
       <ul className="quizzes-list">
         {Object.values(quizzes).map((quiz) => (
           <Link key={quiz.id} to={ROUTES.quizRoute(quiz.id)}>
-            <li className="quiz">{quiz.name}</li>
+            <li className="quiz">
+              {quiz.name}
+            </li>
           </Link>
         ))}
       </ul>
