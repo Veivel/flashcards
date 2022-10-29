@@ -9,7 +9,7 @@ body {
 }
 
 nav {
-  background: #b736ff;
+  background: #350350;
   display: flex;
   padding: 24px 36px;
 }
@@ -225,6 +225,10 @@ li:not(:last-child) {
   margin: auto;
   background-color: transparent;
   perspective: 1000px;
+}
+
+.plus-button {
+  font-size:medium;
 }
 
 /* Does not work */

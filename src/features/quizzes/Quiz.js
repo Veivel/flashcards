@@ -9,9 +9,16 @@ export default function Topic() {
   let { quizId } = useParams();
   const quiz = quizzes[quizId];
 
+  // TODO
+  const handlePlusButton = (event) => {
+    event.preventDefault();
+    alert("wow");
+  }
+
   return (
-    <section>
+    <section className="center">
       <h1>{quiz.name}</h1>
+      <button className="plus-button" onClick={(e) => handlePlusButton(e)}>+ New Card</button>
       <ul className="cards-list">
         {quiz.cardIds.map((id) => (
           <Card key={id} id={id} />
