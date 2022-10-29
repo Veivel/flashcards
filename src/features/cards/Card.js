@@ -8,11 +8,17 @@ export default function Card({ id }) {
   const card = cards[id];
   const [flipped, setFlipped] = useState(false);
 
+  const CardAppearance = () => {
+    if (!flipped) {
+      return <button className="card card-front" onClick={(e) => setFlipped(!flipped)} style={{background: "#400080"}}>{card.front}</button>
+    } else {
+      return <button className="card card-back" onClick={(e) => setFlipped(!flipped)} style={{background: "#800080"}}>{card.back}</button>
+    }
+  }
+
   return (
-    <li>
-      <button className="card" onClick={(e) => setFlipped(!flipped)}>
-        {flipped ? card.back : card.front}
-      </button>
+    <li className="card-outer">
+      <CardAppearance />
     </li>
   );
 }

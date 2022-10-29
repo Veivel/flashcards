@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from "uuid";
+import loadItem from "../../app/store-loader"
 
 const initialState = {
-    topics: {},
-}
+    topics: loadItem('topics')
+};
 
 const topicSlice = createSlice({
     name: 'topics',
@@ -22,6 +23,7 @@ const topicSlice = createSlice({
 });
 
 export const selectTopics = state => {
+    // return state ? state.topics.topics : undefined;
     return state.topics.topics;
 }
 

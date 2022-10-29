@@ -214,5 +214,29 @@ li:not(:last-child) {
   border: none;
   color: white;
   padding: 73px 44px;
-  width: 100%;
+  margin: auto;
+  width: 55%;
+
+  text-align: center;
+}
+
+.card-outer {
+  text-align: center;
+  margin: auto;
+  background-color: transparent;
+  perspective: 1000px;
+}
+
+/* Does not work */
+.card-outer:hover .card {
+  animation: 1s ls linear flipV;
+}
+
+@keyframes flipV {
+  50% {
+    transform: rotateX(180deg);
+  } 
+  to {
+    transform: rotateX(360deg);
+  }
 }

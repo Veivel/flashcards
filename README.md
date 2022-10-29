@@ -2,8 +2,6 @@
 
 - add new card, from inside existing Quiz menu
 - delete existing quizzes permanently, from Quizzes menu
-- implement persistent data
-- implement flip animation
 
 # To Run
 

@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from "uuid";
+import loadItem from '../../app/store-loader';
 
 const initialState = {
-    cards: {}
+    cards: loadItem('cards')
 }
 
 const cardSlice = createSlice({
