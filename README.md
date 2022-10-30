@@ -1,7 +1,12 @@
+# About
+
+This pure React app is a simple flashcards app that uses react-router for routing, redux toolkit for state management, and local storage to load/save data. Styling is done purely with CSS.
+
 # TO-DO List
 
-- add new card, from inside existing Quiz menu
-- delete existing quizzes permanently, from Quizzes menu
+- delete card functionality
+- edit card functionality
+- data saved w/ account instead of persisting with local storage
 
 # To Run
 
@@ -15,6 +20,7 @@ Run `npm start` in the project root and the app will be available on port 3000.
 - `/new-quiz` – form to create a new quiz
 - `/quizzes` – index of all quizzes
 - `/quizzes/:quizId` – page for an individual quiz
+- `/quizzes/:quizId/new` - page to create new card for an individual quiz
 
 # Source
 

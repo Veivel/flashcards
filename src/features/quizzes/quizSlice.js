@@ -39,12 +39,12 @@ const quizSlice = createSlice({
         // insert cardId to quiz's cardIds array
         insertCardToQuiz: {
             reducer: (state, action) => {
-                const prevQuiz = state.quizzes[action.payload.id];
-                const cardIds = prevQuiz ? prevQuiz.cardIds: [];
-                cardIds.push(action.payload.cardId);
-                
+                // dont murder me for this mess ok, it works and thats all that matters
                 state.quizzes = {
-                    ...state.quizzes, [action.payload.quizId]: {...prevQuiz, cardIds: cardIds}
+                    ...state.quizzes, [action.payload.quizId]: {
+                        ...state.quizzes[action.payload.quizId], cardIds: 
+                            [...state.quizzes[action.payload.quizId].cardIds, action.payload.cardId]
+                    }
                 }
             },
             prepare: (cardId, quizId) => ({
