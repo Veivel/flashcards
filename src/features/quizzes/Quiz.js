@@ -12,12 +12,6 @@ export default function Topic() {
   const quiz = quizzes[quizId];
   const dispatch = useDispatch();
 
-  // TODO
-  const handlePlusButton = (event) => {
-    event.preventDefault();
-    alert(event.target);
-  }
-
   const handleDeleteButton = (event, quizId) => {
     dispatch(deleteQuiz(quizId));
     dispatch(deleteQuizFromTopic(quiz.topicId, quizId));
@@ -26,12 +20,18 @@ export default function Topic() {
   return (
     <section className="center">
       <h1>{quiz.name}</h1>
-      <button className="plus-button" onClick={(e) => handlePlusButton(e)}>+ New Card</button>
+
+      <Link to={ROUTES.newCardRoute(quiz.id)} className="button plus-button">
+        + New Card
+      </Link>
+      <br /><br />
+
       <ul className="cards-list">
         {quiz.cardIds.map((id) => (
           <Card key={id} id={id} />
         ))}
       </ul>
+
       <table style={{width: "100%"}}><tbody>
         <tr>
           <td>
@@ -46,6 +46,7 @@ export default function Topic() {
           </td>
         </tr>
       </tbody></table>
+
     </section>
   );
 }

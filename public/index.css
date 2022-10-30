@@ -1,10 +1,10 @@
+/* Global */
 * {
   font-family: "Open Sans", sans-serif;
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   margin: 0;
 }
 
@@ -27,14 +27,17 @@ nav ul li {
   margin-bottom: 0 !important;
 }
 
+/* Non-active navbar */
 nav a {
   color: white;
   font-size: 16px;
   text-decoration: none;
 }
 
+/* Active navbar */
 nav a.active {
   font-weight: bold;
+  color: #db98ff;
 }
 
 h1 {
@@ -51,8 +54,7 @@ h2 {
   margin: 0;
 }
 
-button,
-.button {
+button, .button {
   background: #ffffff;
   border: 1px solid #350350;
   border-radius: 20px;
@@ -117,6 +119,7 @@ section > h1 {
   padding-top: 25px;
 }
 
+/* Button to remove card in quiz */
 .remove-card-button {
   color: #350350;
   text-align: right;
@@ -208,6 +211,7 @@ li:not(:last-child) {
   padding: 0;
 }
 
+/* Card front/back */
 .card {
   background: #b736ff;
   border-radius: 15px;
@@ -223,12 +227,14 @@ li:not(:last-child) {
   transform-style: preserve-3d;
 }
 
+/* Card li */
 .card-outer {
   border-radius: 15px;
   background-color: transparent;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  perspective: 1000px;
 }
 
+/* + Button */
 .plus-button {
   font-size:medium;
 }
@@ -238,6 +244,7 @@ li:not(:last-child) {
   color: red;
 }
 
+/* Flip card animation */
 .card-outer:active .card {
   transform: rotateX(180deg);
 }

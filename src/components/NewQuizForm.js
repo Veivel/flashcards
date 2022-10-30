@@ -19,7 +19,11 @@ export default function NewQuizForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name.length === 0) {
+    // Input validation
+    if (name.length === 0) { // no quiz title
+      return;
+    }
+    if (!topics[topicId]) { // no topic
       return;
     }
 
@@ -67,14 +71,14 @@ export default function NewQuizForm() {
           id="quiz-name"
           value={name}
           onChange={(e) => setName(e.currentTarget.value)}
-          placeholder="Quiz Title"
+          placeholder="Enter Quiz title..."
         />
         <select
           id="quiz-topic"
           onChange={(e) => setTopicId(e.currentTarget.value)}
-          placeholder="Choose Topic"
+          placeholder=""
         >
-          <option value="">Topic</option>
+          <option value="">Choose a Topic...</option>
           {Object.values(topics).map((topic) => (
             <option key={topic.id} value={topic.id}>
               {topic.name}

@@ -10,9 +10,17 @@ export default function Card({ id }) {
 
   const CardAppearance = () => {
     if (!flipped) {
-      return <button className="card card-front" onMouseDown={(e) => setFlipped(!flipped)} style={{background: "#400080"}}>{card.front}</button>
+      return (
+        <button className="card card-front" onMouseDown={(e) => setFlipped(!flipped)} style={{background: "#400080"}}>
+          {card.front}
+        </button>
+      );
     } else {
-      return <button className="card card-back" onMouseDown={(e) => setFlipped(!flipped)} style={{background: "#800080"}}>{card.back}</button>
+      return (
+        <button className="card card-back" onMouseDown={(e) => setFlipped(!flipped)} style={{background: "#800080"}}>
+          {card.back}
+        </button>
+      );
     }
   }
 

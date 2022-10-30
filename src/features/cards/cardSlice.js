@@ -14,8 +14,8 @@ const cardSlice = createSlice({
             reducer: (state, action) => {
                 state.cards = {...state.cards, [action.payload.id]: action.payload}
             },
-            prepare: (id, front, back) => ({
-                payload: {id: id, front: front, back: back}
+            prepare: (cardId, front, back) => ({
+                payload: {id: cardId, front: front, back: back}
             })
         }
     }

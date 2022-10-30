@@ -9,6 +9,7 @@ import {
 import Landing from "../components/landing";
 import NewQuizForm from "../components/NewQuizForm";
 import NewTopicForm from "../components/NewTopicForm";
+import NewCardForm from "../components/NewCardForm";
 import Topics from "../features/topics/Topics";
 import Topic from "../features/topics/Topic";
 import Quiz from "../features/quizzes/Quiz";
@@ -20,22 +21,22 @@ export default function App() {
   return (
     <Router>
 
-      {/* Navbar that opens... routes? */}
+      {/* Navbar */}
       <nav>
         <ul>
           <li>
             <NavLink to={ROUTES.topicsRoute()} activeClassName="active">
-              Topics
+              TOPICS
             </NavLink>
           </li>
           <li>
             <NavLink to={ROUTES.quizzesRoute()} activeClassName="active">
-              Quizzes
+              QUIZZES
             </NavLink>
           </li>
           <li>
             <NavLink to={ROUTES.newQuizRoute()} activeClassName="active">
-              New Quiz!
+              NEW QUIZ
             </NavLink>
           </li>
         </ul>
@@ -86,6 +87,10 @@ function QuizRoutes() {
       <Switch>
         <Route path={`${match.path}/new`}>
           <NewQuizForm />
+        </Route>
+        <Route path={`${match.path}/:quizId/new`}>
+          {/* Order matters! */}
+          <NewCardForm />
         </Route>
         <Route path={`${match.path}/:quizId`}>
           <Quiz />
